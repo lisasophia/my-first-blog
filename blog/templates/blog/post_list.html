@@ -6,9 +6,12 @@
 	<h1>Make up happen</h1>
 	<h2>A blog by Lisa</h2>
 	<div> Section 1 </div>
-	<h3>Created as part of the Django Girls workshop</h3>
-		<p> Hi there! This is the first attempt to create a website, right now it works but it still looks pretty shitty.</p>
-	<strong>REALLY SHITTY</strong>
-		<p> It should look a lot more like <a href="http://www.lisaeldridge.com/">this</a>.</p>
+	{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+   		 <h1><a href="">{{ post.title }}</a></h1>
+   		 <p>{{ post.text|linebreaksbr }}</p>
+   		 </div>
+	{% endfor %}
 	</body>
 </html>
